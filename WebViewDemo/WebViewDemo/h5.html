@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>js Bridge demo</title>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+    function btnClick() {
+        try {
+            action()
+        } catch (err) {
+            alert(err)
+        }
+    }
+    function action() {
+        window.webkit.messageHandlers.shareAction.postMessage({"title":"jump", "type":"1"})
+    }
+    </script>
+</head>
+
+<body>
+    <h1>js demo test</h1>
+    <p style="text-align: center;">
+        <button type="button" onclick="btnClick()" style="font-size: 100px;">test JS</button>
+    </p>
+</body>
+
+</html>
